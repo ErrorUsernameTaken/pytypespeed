@@ -1,15 +1,14 @@
 from time import time
 i = 0
 cs = False
-prompt = "A lot of things remind me of my father who passed away when I was 24. Driving on certain back roads he showed me. Stopping at certain stores he always used to go to. Eating at his favorite places. More and more of these places are fading away too though. The roads keep getting built up more and more. The shops and restaurants are closing down." ##At first it was heart breaking that my father wasn't in this world anymore. But slowly the things that remind me of him are leaving this world as well.A lot of things remind me of my father who passed away when I was 24. Driving on certain back roads he showed me. Stopping at certain stores he always used to go to. Eating at his favorite places. More and more of these places are fading away too though. The roads keep getting built up more and more. The shops and restaurants are closing down. At first it was heart breaking that my father wasn't in this world anymore. But slowly the things that remind me of him are leaving this world as well."
-
+prompt = None
 
 def counter():
 	i = 0 
-	print prompt
-	raw_input(">> Press ENTER to begin")
+	print(prompt)
+	input("Press enter to begin. Press enter once you have finished the prompt.")
 	begin_time = time()
-	inp = raw_input("\n")
+	inp = input("\n")
 	end_time = time()
 	final_time = (end_time - begin_time) / 60
 	return final_time, inp
@@ -20,7 +19,7 @@ def wpm(time, line):
 	word_length = len(words)
 	words_per_m = word_length / time
 	return words_per_m
-
+    
 
 def wordcheck(inp):
 	prompts = prompt.split()
@@ -50,7 +49,7 @@ tm, line = counter()
 tm = round(tm, 2)
 words_per_minute = wpm(tm, line)
 words_per_minute = round(words_per_minute, 2)
-print("You total time was: %r minutes")% tm
+print("Your total time was: %r minutes")% tm
 print("with an average of: %r words per minute")% words_per_minute
 percentage = wordcheck(line)
 percentager = round(percentage, 2)
