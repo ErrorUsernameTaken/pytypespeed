@@ -6,3 +6,5 @@ prompt, initializing a timer, and then, when done, the average words per minute 
 TODO:
 	Save to file to make a "scoreboard"
 	Have players login to see their different scores
+	(python 3) Fix string formatting
+	Have multiple prompts
