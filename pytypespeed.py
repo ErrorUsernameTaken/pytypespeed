@@ -1,12 +1,12 @@
 from time import time
 i = 0
 cs = False
-prompt = None
+prompt = "This is a placeholder prompt."
 
 def counter():
 	i = 0 
 	print(prompt)
-	input("Press enter to begin. Press enter once you have finished the prompt.")
+	input("Press enter to begin. Once you have finished, press enter.")
 	begin_time = time()
 	inp = input("\n")
 	end_time = time()
@@ -49,8 +49,8 @@ tm, line = counter()
 tm = round(tm, 2)
 words_per_minute = wpm(tm, line)
 words_per_minute = round(words_per_minute, 2)
-print("Your total time was: %r minutes")% tm
-print("with an average of: %r words per minute")% words_per_minute
+print("Total time: {} minutes".format(tm))
+print("Average WPM: {} words per minute".format(words_per_minute))
 percentage = wordcheck(line)
 percentager = round(percentage, 2)
-print("with an accuracy of: %r %% accuracy") % percentager
+print("Accuracy: {}% accuracy".format(percentager))
