@@ -1,7 +1,6 @@
 from time import time
 i = 0
-cs = False
-prompt = "This is a placeholder prompt."
+prompt = "This is a placeholder prompt." 
 
 def counter():
 	i = 0 
@@ -49,9 +48,11 @@ tm, line = counter()
 tm = round(tm, 2)
 words_per_minute = wpm(tm, line)
 words_per_minute = round(words_per_minute, 2)
-print("Time: {} seconds".format(tm)) #still not true seconds since it's like
-#0.05 instead of 5.xx 
+print("Time: {} seconds".format(tm)) #not true seconds
+#it does 0.05 instead of 5.xx or whatever
 print("Average WPM: {} ".format(words_per_minute))
 percentage = wordcheck(line)
 percentager = round(percentage, 2)
-print("Accuracy: {}% ".format(percentager))
+print("Accuracy: {0:.2f}% ".format(percentager))
+
+name = input("Please enter a name to save your data: ") #for future file thing
