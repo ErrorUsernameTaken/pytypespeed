@@ -6,6 +6,8 @@ prompt, initializing a timer, and then, when done, the average words per minute 
 TODO:
 	Save to file to make a "scoreboard"
 	Have players login to see their different scores
+	Check to see if the prompt is actually completed
+	Calculate accuracy with backspaces
 	Have multiple prompts
 	Have time in seconds
 	Add comments to code
