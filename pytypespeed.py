@@ -10,7 +10,7 @@ def counter():
 	begin_time = time()
 	inp = input("\n")
 	end_time = time()
-	final_time = (end_time - begin_time) / 60
+	final_time = (end_time - begin_time) / 100
 	return final_time, inp
 
 
@@ -49,8 +49,9 @@ tm, line = counter()
 tm = round(tm, 2)
 words_per_minute = wpm(tm, line)
 words_per_minute = round(words_per_minute, 2)
-print("Total time: {} minutes".format(tm))
-print("Average WPM: {} words per minute".format(words_per_minute))
+print("Time: {} seconds".format(tm)) #still not true seconds since it's like
+#0.05 instead of 5.xx 
+print("Average WPM: {} ".format(words_per_minute))
 percentage = wordcheck(line)
 percentager = round(percentage, 2)
-print("Accuracy: {}% accuracy".format(percentager))
+print("Accuracy: {}% ".format(percentager))
