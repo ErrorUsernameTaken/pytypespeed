@@ -2,6 +2,7 @@ from time import time
 i = 0
 prompt = "This is a placeholder prompt." 
 
+#keeps time
 def counter():
 	i = 0 
 	print(prompt)
@@ -12,14 +13,14 @@ def counter():
 	final_time = (end_time - begin_time) / 100
 	return final_time, inp
 
-
+#calculates wpm
 def wpm(time, line):
 	words = line.split()
 	word_length = len(words)
 	words_per_m = word_length / time
 	return words_per_m
     
-
+#checks if words are correct
 def wordcheck(inp):
 	prompts = prompt.split()
 	inputs = inp.split()
@@ -43,7 +44,7 @@ def wordcheck(inp):
 	
 	return percentage
 
-
+#calculates results
 tm, line = counter()
 tm = round(tm, 2)
 words_per_minute = wpm(tm, line)
