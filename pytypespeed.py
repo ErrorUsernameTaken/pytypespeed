@@ -1,14 +1,15 @@
 from time import time
 import random
 import os
-i = 0
 prompt = "This is a placeholder prompt."
 
 #since english-master files are out of order, do something with random module maybe?
-
-#file exists but it says there's no path. learn more (todo)
 #have the user control how many words they type (todo)
 #fix some errors with typing (todo)
+#fix accuracy, wpm, and time (todo)
+#fix calculating errors (todo)
+
+#Errors -
 """
 This is aplceholder repmopt. -
   File "/Users/Trent/Desktop/Programming/Python/!!!WIP Projects/TypingTest.py", line 83, in <module>
@@ -28,23 +29,41 @@ else:
     print('Invalid input.')
 
 #checks if the user has the files
-def filecheck():
-    if diff == 'average':
-        if os.path.exists("10k-english-usa-no-swears-medium.txt"):
-            #run prompts
-            print("h")
-        else:
-            print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
-    elif diff == 'advanced':
-        if os.path.exists("10k-english-usa-no-swears-long.txt"):
-            #run prompts
-            print("h")
-        else:
-            print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
+#maybe use try/catch statement?
 
-filecheck()
+filepath = input("Where is the prompt file located?: ")
+#personal is /Users/Trent/Desktop/Future\ Reference/google-10000-english-master/10k-english-usa-no-swears-medium.txt
+#/Users/Trent/Desktop/Future\ Reference/google-10000-english-master/10k-english-usa-no-swears-long.txt
+#I DON'T KNOW HOW TO DO THIS ANY OTHER WAY =)
+if diff == 'average':
+    if os.path.exists(filepath):
+        #run prompts (call counter() )
+        #seems to work without calling counter(), which is interesting. might change later
+        print("h")
+    else:
+        print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
+elif diff == 'advanced':
+    if os.path.exists(filepath):
+        #run prompts (call counter() )
+        print("h")
+    else:
+        print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
+
+
+#keeps track of the user's word amount
+#wordamt = int(input("How many words do you want to type? "))
+#have random module
+
+"""
+lines = open("../WordsForGames.txt").readlines() 
+line = lines[0] 
+
+words = line.split() 
+myword = random.choice(words)
+"""
 
 #keeps time
+#maybe use time module
 def counter():
     print(prompt)
     input("Press enter to begin. Once you have finished, press enter.")
@@ -62,12 +81,23 @@ def wpm(time, line):
     return words_per_m
 
 #checks if words are correct
+#error_count = 0
+
+"""
+line 115, in wordcheck
+    correct = float(len(prompts)) - float(error_count)
+UnboundLocalError: local variable 'error_count' referenced before assignment
+"""
+
 def wordcheck(inp):
     prompts = prompt.split()
     inputs = inp.split()
     error_count = 0
 
-    idx = 0
+    idx = 0 #what does idx mean?
+    #maybe this limits you to having one error.
+    #calculates errors
+    #i need to fix this
     for inp in inputs:
         if inp != prompts[idx]:
             error_count += 1
@@ -95,5 +125,8 @@ print("Average WPM: {} ".format(words_per_minute))
 percentage = wordcheck(line)
 percentager = round(percentage, 2)
 print("Accuracy: {0:.2f}% ".format(percentager))
+
+#if percentager != 100.00:
+    #print("Errors: {}".format(error_count))
 
 name = input("Please enter a name to save your data: ") #for future file thing
