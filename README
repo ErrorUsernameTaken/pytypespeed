@@ -6,7 +6,8 @@ prompt, initializing a timer, and then, when done, the average words per minute 
 TODO:
 	Save to file to make a "scoreboard"
 	Check to see if the prompt is actually completed (might need pynput)
-	Calculate accuracy with backspaces
+	Disable backspaces
+	New accuracy system
 	Have multiple prompts
 	Have time in seconds
 	Add a difficulty setting (easy/advanced)
