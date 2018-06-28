@@ -6,8 +6,10 @@ prompt = "This is a placeholder prompt."
 #since english-master files are out of order, do something with random module maybe?
 #have the user control how many words they type (todo)
 #fix some errors with typing (todo)
-#fix accuracy, wpm, and time (todo)
+#fix accuracy and wpm (todo)
 #fix calculating errors (todo)
+#okay man what am i going to do if things go wrong?
+#i need functions.
 
 #Errors -
 """
@@ -42,17 +44,23 @@ if diff == 'average':
         print("h")
     else:
         print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
+        print("Alternatively, if you have downloaded the file, please restart the program and try again.")
 elif diff == 'advanced':
     if os.path.exists(filepath):
         #run prompts (call counter() )
         print("h")
     else:
         print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
+        print("Alternatively, if you have downloaded the file, please restart the program and try again.")
 
 
 #keeps track of the user's word amount
-#wordamt = int(input("How many words do you want to type? "))
+#wordamt = int(input("How many words do you want to type? \n(Must be in the range 1-10000) "))
 #have random module
+"""
+if (wordamt < 1 || wordamt > 10000):
+    print("What did I just tell you?")
+"""
 
 """
 lines = open("../WordsForGames.txt").readlines() 
@@ -63,14 +71,13 @@ myword = random.choice(words)
 """
 
 #keeps time
-#maybe use time module
 def counter():
     print(prompt)
     input("Press enter to begin. Once you have finished, press enter.")
     begin_time = time()
     inp = input("\n")
     end_time = time()
-    final_time = (end_time - begin_time) / 100
+    final_time = (end_time - begin_time)
     return final_time, inp
 
 #calculates wpm
@@ -119,8 +126,7 @@ tm, line = counter()
 tm = round(tm, 2)
 words_per_minute = wpm(tm, line)
 words_per_minute = round(words_per_minute, 2)
-print("Time: {} seconds".format(tm)) #not true seconds
-#it does 0.05 instead of 5.xx or whatever
+print("Time: {} seconds".format(tm))
 print("Average WPM: {} ".format(words_per_minute))
 percentage = wordcheck(line)
 percentager = round(percentage, 2)
