@@ -7,6 +7,7 @@ prompt = "This is a placeholder prompt."
 #have the user control how many words they type (todo)
 #fix some errors with typing (todo)
 #fix accuracy and wpm (todo)
+#how do i test if wpm is correcT?
 #fix calculating errors (todo)
 #okay man what am i going to do if things go wrong?
 #i need functions.
@@ -19,6 +20,13 @@ This is aplceholder repmopt. -
   File "/Users/Trent/Desktop/Programming/Python/!!!WIP Projects/TypingTest.py", line 54, in wpm
     words_per_m = word_length / time
 ZeroDivisionError: float division by zero
+
+this is a placehodler prompt
+  File "/Users/Trent/Desktop/Programming/Python/!!!WIP Projects/TypingTest.py", line 125, in <module>
+    percentage = wordcheck(line)
+  File "/Users/Trent/Desktop/Programming/Python/!!!WIP Projects/TypingTest.py", line 105, in wordcheck
+    if inp == prompts[idx + 1]:
+IndexError: list index out of range
 """
 
 diff = input("Choose a difficulty: Average/Advanced ")
@@ -44,21 +52,21 @@ if diff == 'average':
         print("h")
     else:
         print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
-        print("Alternatively, if you have downloaded the file, please restart the program and try again.")
+        print("Alternatively, if you have already downloaded the file, please restart the program and try again.")
 elif diff == 'advanced':
     if os.path.exists(filepath):
         #run prompts (call counter() )
         print("h")
     else:
         print("The file does not exist. \nPlease download the file here - https://bit.ly/2M8205X")
-        print("Alternatively, if you have downloaded the file, please restart the program and try again.")
+        print("Alternatively, if you have already downloaded the file, please restart the program and try again.")
 
 
 #keeps track of the user's word amount
-#wordamt = int(input("How many words do you want to type? \n(Must be in the range 1-10000) "))
-#have random module
 """
-if (wordamt < 1 || wordamt > 10000):
+wordamt = int(input("How many words do you want to type?\n(Must be in the range 1-10000) "))
+#have random module
+if wordamt < 1 or wordamt > 10000:
     print("What did I just tell you?")
 """
 
@@ -88,14 +96,6 @@ def wpm(time, line):
     return words_per_m
 
 #checks if words are correct
-#error_count = 0
-
-"""
-line 115, in wordcheck
-    correct = float(len(prompts)) - float(error_count)
-UnboundLocalError: local variable 'error_count' referenced before assignment
-"""
-
 def wordcheck(inp):
     prompts = prompt.split()
     inputs = inp.split()
@@ -125,14 +125,11 @@ def wordcheck(inp):
 tm, line = counter()
 tm = round(tm, 2)
 words_per_minute = wpm(tm, line)
-words_per_minute = round(words_per_minute, 2)
+words_per_minute = round(words_per_minute, 2) * 100
 print("Time: {} seconds".format(tm))
 print("Average WPM: {} ".format(words_per_minute))
 percentage = wordcheck(line)
 percentager = round(percentage, 2)
 print("Accuracy: {0:.2f}% ".format(percentager))
-
-#if percentager != 100.00:
-    #print("Errors: {}".format(error_count))
 
 name = input("Please enter a name to save your data: ") #for future file thing
