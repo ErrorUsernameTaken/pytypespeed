@@ -5,9 +5,12 @@ prompt, initializing a timer, and then, when done, the average words per minute 
 
 TODO:
 	Check to see if the prompt is actually completed (might need pynput)
-	Disable backspaces
 	New accuracy system
 	Add a difficulty setting (easy/advanced)
 	Have the reader choose how many words they want to type
 	Add sudden death mode (one mistake and the prompt ends)
 	Make it work. Just make it work.
+
+Failed TODOs:
+These TODOs were supposed to be done, but I gave up on them. They were just too complex for my pea brain to handle.
+	Disabling backspaces (why has nobody done aNYTHING for disabling keys)
