@@ -7,7 +7,6 @@ TODO:
 	Check to see if the prompt is actually completed (might need pynput)
 	Disable backspaces
 	New accuracy system
-	Have multiple prompts
 	Add a difficulty setting (easy/advanced)
 	Have the reader choose how many words they want to type
 	Add sudden death mode (one mistake and the prompt ends)
