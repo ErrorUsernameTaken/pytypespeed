@@ -10,4 +10,5 @@ TODO:
 	Disable backspaces (possibly the enter key too, to prevent premature "completion")
 	Properly factor errors into accuracy
 	Have the user choose either quotes or single words
+	^Actually get quotes
 	If words, have the user choose a certain amount of words (1-1000)
