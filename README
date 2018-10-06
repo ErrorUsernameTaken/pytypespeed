@@ -3,17 +3,11 @@ VERSION 1.0
 Pytypespeed is a script to compute a user's average typing speed in words per minute. Using a prompt, the user will begin to retype the
 prompt, initializing a timer, and then, when done, the average words per minute will be reproduced along with error margin. 
 
-
-I have given up on this project. Good luck.
+Let's try this again, shall we? :^)
 
 TODO:
-	Check to see if the prompt is actually completed (might need pynput)
-	New accuracy system
-	Add a difficulty setting (easy/advanced)
-	Have the reader choose how many words they want to type
-	Add sudden death mode (one mistake and the prompt ends)
-	Make it work. Just make it work.
-
-Failed TODOs:
-These TODOs were supposed to be done, but I gave up on them. They were just too complex for my pea brain to handle.
-	Disabling backspaces (why has nobody done aNYTHING for disabling keys)
+	Check to see if the prompt is actually completed
+	Disable backspaces (possibly the enter key too, to prevent premature "completion")
+	Properly factor errors into accuracy
+	Have the user choose either quotes or single words
+	If words, have the user choose a certain amount of words (1-1000)
