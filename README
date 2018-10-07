@@ -11,4 +11,3 @@ TODO:
 	Properly factor errors into accuracy
 	Have the user choose word difficulty (average or advanced)
 	If words, have the user choose a certain amount of words (50-1000)
-	Properly convert time into minutes:seconds.milliseconds format
