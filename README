@@ -10,4 +10,4 @@ TODO:
 	Disable backspaces (possibly the enter key too, to prevent premature "completion")
 	Properly factor errors into accuracy
 	Have the user choose word difficulty (average or advanced)
-	If words, have the user choose a certain amount of words (1-1000)
+	If words, have the user choose a certain amount of words (50-1000)
