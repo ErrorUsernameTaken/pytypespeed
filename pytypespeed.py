@@ -1,4 +1,9 @@
 import time
+import keyboard 
+#for checking for actual completion -
+#disable enter key
+#record the number of keys typed
+#if the number of keys typed is equal to len(prompt) + 1, finish it
 
 prompt = "walmart gaming yeah" #placeholder prompt
 
@@ -10,13 +15,13 @@ def diffChoice():
                 diffChoice()
         else:
                 if diffi == 'average':
-                        print("advanced")
+                        pass
                         #open average-prompt.py
                         #and then, when the user picks the word amount
                         #^ call wordChoice for this
                         #select that many words from that file
                 elif diffi == 'advanced':
-                        print("advanced")
+                        pass
                         #same thing, different files
 
 diffChoice()
@@ -37,6 +42,7 @@ def wordChoice():
 def counter():
 	print(prompt)
 	input(">> Press ENTER to begin")
+	#maybe disable keypresses here?
 	global start_time
 	start_time = time.time()
 	inp = input("\n")
@@ -76,7 +82,7 @@ def wordcheck(inp):
 	
 	return percentage
 
-
+#calculates things
 tm, line = counter()
 tm = round(tm, 2)
 hours, rem = divmod(end_time - start_time, 3600)
