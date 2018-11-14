@@ -1,13 +1,11 @@
 import time
 import keyboard
 
-# for checking for actual completion -
-# disable enter key
-# record the number of keys typed
-# if the number of keys typed is equal to len(prompt) + 1, finish it
+# average - "/prompts/average_prompt.py" (maybe)
+# advanced - "/prompts/advanced_prompt.py" (maybe)
+# not sure if i should change prompts into just words (no list)
 
 prompt = "walmart gaming yeah"  # placeholder prompt
-
 
 # lets the user choose the word difficulty
 def diffChoice():
@@ -39,15 +37,20 @@ def wordChoice():
     else:
         print(wordAmt)
         # select wordAmt words from whatever file
-        # need to print out the words so that they aren't
-        # in a list format
+        # need to print out the words so that they aren't in a list format
 
 
 # keeps track of time
 def counter():
     print(prompt)
     input(">> Press ENTER to begin")
-    keyboard.block_key("backspace") #disables backspaces 
+    keyboard.block_key("backspace")  # disables backspaces
+    global errors
+    errors = 0
+    # for recording errors:
+    # after the user is done, loop through both lists
+    # if a character typed isn't equal to a character in the prompt, add an error
+
     global start_time
     start_time = time.time()
     inp = input("\n")
@@ -65,7 +68,7 @@ def calcWpm(time, line):
     return words_per_m
 
 
-# checks for incorrect works
+# checks for incorrect words
 def wordcheck(inp):
     prompts = prompt.split()
     inputs = inp.split()
@@ -82,14 +85,13 @@ def wordcheck(inp):
         else:
             idx += 1
 
-    words_left = len(prompts) - len(inputs)
     correct = float(len(prompts)) - float(errorcount)
-    percentage = (((float(correct) / float(len(prompts))) - float(words_left) / float(len(prompts))) * 100)
+    percentage = float(correct) / float(len(prompts)) * 100
 
     return percentage
 
 
-# calculates things
+# calculates statistics
 tm, line = counter()
 tm = round(tm, 2)
 hours, rem = divmod(end_time - start_time, 3600)
